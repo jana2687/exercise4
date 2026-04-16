@@ -24,19 +24,19 @@ closePopup.addEventListener("click", togglepopup);
 popupBox.addEventListener("click", function (e) {
     e.stopPropagation();
 })
-nextPopup.addEventListener("click",function(e){
-    currentImgIndex=(++currentImgIndex) % (imgsList.length);
-  let nextImgIndex=currentImgIndex,
-      nextImgEle=imgsList[nextImgIndex],
-      nextImgSrc=nextImgEle.getAttribute("src");
-  popupImg.setAttribute("src",nextImgSrc);
-  updateIndicators();
+nextPopup.addEventListener("click", function (e) {
+    currentImgIndex = (++currentImgIndex) % (imgsList.length);
+    let nextImgIndex = currentImgIndex,
+        nextImgEle = imgsList[nextImgIndex],
+        nextImgSrc = nextImgEle.getAttribute("src");
+    popupImg.setAttribute("src", nextImgSrc);
+    updateIndicators();
 })
-prevPopup.addEventListener("click",function(e){
-    currentImgIndex=(--currentImgIndex < 0) ? (imgsList.length-1):(currentImgIndex);
-  let prevImgIndex=currentImgIndex,
-      prevImgEle=imgsList[prevImgIndex],
-      prevImgSrc=prevImgEle.getAttribute("src");
-  popupImg.setAttribute("src",prevImgSrc);
-  updateIndicators();
+prevPopup.addEventListener("click", function (e) {
+    currentImgIndex = (--currentImgIndex < 0) ? (imgsList.length - 1) : (currentImgIndex);
+    let prevImgIndex = currentImgIndex,
+        prevImgEle = imgsList[prevImgIndex],
+        prevImgSrc = prevImgEle.getAttribute("src");
+    popupImg.setAttribute("src", prevImgSrc);
+    updateIndicators();
 })
