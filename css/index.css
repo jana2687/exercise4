@@ -106,6 +106,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .popup .box i.close {
@@ -131,6 +132,7 @@ body {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    cursor: pointer;
 }
 
 .popup .box .indicators li.active {

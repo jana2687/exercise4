@@ -29,7 +29,7 @@ nextPopup.addEventListener("click", function (e) {
     let nextImgIndex = currentImgIndex,
         nextImgEle = imgsList[nextImgIndex],
         nextImgSrc = nextImgEle.getAttribute("src");
-    popupImg.setAttribute("src", nextImgSrc);
+    updatePopupEle(nextImgSrc);
     updateIndicators();
 })
 prevPopup.addEventListener("click", function (e) {
@@ -37,6 +37,15 @@ prevPopup.addEventListener("click", function (e) {
     let prevImgIndex = currentImgIndex,
         prevImgEle = imgsList[prevImgIndex],
         prevImgSrc = prevImgEle.getAttribute("src");
-    popupImg.setAttribute("src", prevImgSrc);
+    updatePopupEle(prevImgSrc);
     updateIndicators();
+})
+popupIndicators.forEach(function (popupIndicator) {
+    popupIndicator.addEventListener("click", function () {
+        let popupIndicatorsArr = Array.from(popupIndicators);
+        currentImgIndex = popupIndicatorsArr.indexOf(popupIndicator);
+        let currentImgSrc = imgsList[currentImgIndex].getAttribute("src");
+        updatePopupEle(currentImgSrc);
+        updateIndicators();
+    })
 })
